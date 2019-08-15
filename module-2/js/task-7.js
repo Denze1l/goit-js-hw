@@ -14,7 +14,7 @@ let total = 0;
         numbers.push(Number(input))
         // console.log(numbers);
       } else {
-        alert = "not a number";
+        alert("not a number");
       }
       
     } while(input !== null);
