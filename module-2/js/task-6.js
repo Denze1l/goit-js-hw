@@ -3,14 +3,8 @@
 const checkForSpam = function(string) {
   let massString = string.toLowerCase();
   
-//   console.log(massString.includes(words))
-//   console.log(massString.includes("spam", "sale"));
-  if (massString.includes("spam") || massString.includes("sale")) {
-      console.log(true)
-  } else {
-    console.log(false)
-  }
-  return massString;
+
+  return massString.includes("spam") || massString.includes("sale");
 };
 
 console.log(checkForSpam("Latest technology news")); // false
