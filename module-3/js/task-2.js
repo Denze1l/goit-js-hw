@@ -9,10 +9,12 @@
 // const countProps = function({})
 
 // const keys = ;
-let key = Object.countProps().length
-console.log(key)
-
-
+// let key = Object.countProps().length
+const countProps =(obj)=>{
+ let key = Object.keys(obj).length;
+ 
+return key;
+}
 
 console.log(countProps({})); // 0
 
