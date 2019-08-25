@@ -1,7 +1,6 @@
-    
-'use strict';
+"use strict";
 
-import users from './users.js';
+import users from "./users.js";
 // Задание 4
 // Получить массив только неактивных пользователей (поле isActive).
 

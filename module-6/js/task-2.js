@@ -1,7 +1,7 @@
-   
-'use strict';
+"use strict";
 
-import users from './users.js';
+import users from "./users.js";
 
-const getUsersWithEyeColor = (users, color)=>users.filter(user => user.eyeColor === color);
+const getUsersWithEyeColor = (users, color) =>
+  users.filter(user => user.eyeColor === color);
 console.log(getUsersWithEyeColor(users, "blue"));
