@@ -63,7 +63,11 @@ function formSubmit(event) {
   givenAnswers.forEach((value) => {
     data.push(+value);
   });
+  const rigthAnswer = quiz.questions.map(({ answer }) => answer);
+
+
   console.log(data);
+  console.log(rigthAnswer);
 
   // const arrca = Object.values(data);
   // arrca.map(evry=>evry.number)
@@ -71,26 +75,47 @@ function formSubmit(event) {
   // return data
   //  const answer= data.map(elem=>elem.value)
 
-  const rigthAnswer = quiz.questions.map(({ answer }) => answer);
-  console.log(rigthAnswer);
-  let uraa = 0;
+  const numCorrect = data.reduce((acc, elem, currentIndex, data)=>{
 
-  for (let i = 0; i < rigthAnswer.length; i++) {
-    // for (let j = 0; j < data.length; j++) {
-    //   if(rigthAnswer[i]===data[j])
-    //   uraa = uraa+1
-    // }
-    if (rigthAnswer[i] === data[i]){
-    uraa = uraa + 1;
+    if(elem===rigthAnswer[currentIndex]){
+      acc++
     }
     
-  }
-  let result =Math.round(100/rigthAnswer.length*uraa);
-  console.log(result);
+    return acc
+  },0  )
   
-  if(result>80){
-    alert('Congratulations, you past the exem!');
-  } else {
-    alert('You should work harder');
-  }
+  if(numCorrect>80){
+        alert('Congratulations, you past the exem!');
+      } else {
+        alert('You should work harder');
+      }
+
+  // rigthAnswer.reduce((acc, topa)=>{
+  //   let uraa = 0;
+  //   let count =0
+  //   if(topa===data[count+=1]){
+  //     uraa++
+  //   } 
+  //   console.log(uraa);
+    
+  // },0)
 }
+//   for (let i = 0; i < rigthAnswer.length; i++) {
+//     // for (let j = 0; j < data.length; j++) {
+//     //   if(rigthAnswer[i]===data[j])
+//     //   uraa = uraa+1
+//     // }
+//     if (rigthAnswer[i] === data[i]){
+//     uraa = uraa + 1;
+//     }
+    
+//   }
+//   let result =Math.round(100/rigthAnswer.length*uraa);
+//   console.log(result);
+  
+//   if(result>80){
+//     alert('Congratulations, you past the exem!');
+//   } else {
+//     alert('You should work harder');
+//   }
+// }
