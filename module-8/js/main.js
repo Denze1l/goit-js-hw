@@ -44,19 +44,19 @@ const bigPhoto = event => {
   refs.ligthImage.setAttribute("src", evryPhoto);
 };
 
- const closePhoto =()=>{
+const closePhoto = () => {
   window.removeEventListener("keydown", pressEsc);
- };
-const backdropClose = event =>{
-  if(event.target.parentElement.dataset.action){
+};
+const backdropClose = event => {
+  if (event.target.parentElement.dataset.action) {
     refs.lightbox.classList.remove("is-open");
-    console.log('close')
+    console.log("close");
   }
-  console.log(event.currentTarget)
-   if (event.target.nodeName !== "IMG") {
+  console.log(event.currentTarget);
+  if (event.target.nodeName !== "IMG") {
     refs.lightbox.classList.remove("is-open");
-   }
-}
+  }
+};
 
 refs.gallery.addEventListener("click", bigPhoto);
 refs.lightbox.addEventListener("click", backdropClose);
@@ -64,10 +64,10 @@ refs.lightbox.addEventListener("click", closePhoto);
 
 const pressEsc = e => {
   if (e.code !== "Escape") {
-    return
-  };
+    return;
+  }
   refs.lightbox.classList.remove("is-open");
   console.log(e);
-  
-  closePhoto()
+
+  closePhoto();
 };
