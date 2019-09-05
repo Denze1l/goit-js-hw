@@ -24,9 +24,13 @@ const Theme = {
   };
   document.body.classList.add(localStorage.getItem('Theme')) 
 
-if(refs.body.classList.contains('dark-theme')){
-refs.input.checked = true
+// if(refs.body.classList.contains('dark-theme')){
+// refs.input.checked = true
+// }
+if(localStorage.getItem('Theme')===Theme.DARK){
+  refs.input.checked = true
 }
+
 const product = products.map(elem => template(elem)).join(' ');
 // console.log(product);
 
